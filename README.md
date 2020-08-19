@@ -1,4 +1,4 @@
-<h1 align="center"><strong>Travel Api</strong></h1>
+<h1 align="center"><strong>Travel API</strong></h1>
 
 <h4 align="center"><em>API and associated database to track reviews of destinations visited</em></h4>
 
@@ -9,13 +9,13 @@
 
 
 ## Description
-
+This is an API project that offers full CRUD functionality. Users are able to add, remove, view and deleter reviews regarding travel experiences. 
 
 ## API Documentation
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Available API Routes:
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Available API Routes:
 
-* Review List [Type: POST]: http://localhost:5000/api/reviews...
+* Review List [Type: POST]: http://<span></span>localhost:5000/api/reviews...
     * Returns a list of reviews based on parameters below
     * Parameters:
         - LocationCity (string [max 20 characters])
@@ -23,7 +23,7 @@
         - userName (string [max 20 characters])
         - random (boolean [true/false])
 
-* Create Review [Type: POST]: http://localhost:5000/api/reviews...
+* Create Review [Type: POST]: http://<span></span>localhost:5000/api/reviews...
     * Creates a new Review records, all fields required for valid entry.
     * Parameters:
         - LocationCity (string [max 20 characters]) *required
@@ -31,24 +31,24 @@
         - userName (string [max 20 characters]) *required
         - ReviewText (string [max 250 characters]) *required
 
-* Review Info [Type: GET]: http://localhost:5000/api/reviews/{id}
+* Review Info [Type: GET]: http://<span></span>localhost:5000/api/reviews/{id}
     * Returns a single review record based on the id parameter below
     * Parameters:
         - id (integer) *required
 
-* Review Update [Type: PUT]: http://localhost:5000/api/reviews/{id}?userName={user name}
+* Review Update [Type: PUT]: http://<span></span>localhost:5000/api/reviews/{id}?userName={user name}
     * Updates a single review record based on the id parameter below, userName parameter must match the userName on the record. 
     * Parameters:
         - id (integer) *required
         - userName (string [max 20 characters], must match userName on record) *required
 
-* Review Delete [Type: DELETE]: http://localhost:5000/api/reviews/{id}?userName={user name}
+* Review Delete [Type: DELETE]: http://<span></span>localhost:5000/api/reviews/{id}?userName={user name}
     * Deletes a single review record based on the id parameter below, userName parameter must match the userName on the record. 
     * Parameters:
         - id (integer) *required
         - userName (string [max 20 characters], must match userName on record) *required
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Using the review list:
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Using the review list:
 
 * Using a platform like Postman, specify the type of request (GET/POST/PUT/DELETE)
 * Enter the appropriate URL for your route above.
@@ -146,6 +146,6 @@
 
 ### License
 
-Copyright (c) 2020 **_Tyson Lackey_**
+Copyright (c) 2020 **_Tyson Lackey and Teresa Rosinski_**
 
 This software is licensed under the MIT license.
