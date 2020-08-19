@@ -12,6 +12,11 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using TravelApi.Models;
+using Microsoft.AspNetCore.Mvc.ApiExplorer; //for swagger
+using Microsoft.AspNetCore.StaticFiles; // for swagger
+using System.Reflection; // for swagger
+using System.IO;// for swagger
+using Microsoft.OpenApi.Models; //for swagger
 
 namespace TravelApi
 {
@@ -29,11 +34,31 @@ namespace TravelApi
         {
             services.AddDbContext<TravelApiContext>(opt=>opt.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            
+            //Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Travel API", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            
+            //Enable middleware to serve generated Swagger as a JSON endpoint
+            app.UseSwagger();
+
+            //Enable middleware to serve swagger-ui
+            //specify the Swagger JSON endpoint.
+            app.UseSwaggerUI(c=>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.RoutePrefix = string.Empty; // lets us go to local host and still view swagger page
+            });
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
