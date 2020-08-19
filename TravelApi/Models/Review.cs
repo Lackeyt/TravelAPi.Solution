@@ -5,8 +5,9 @@ namespace TravelApi.Models
   public class Review
   {
     public int ReviewId { get; set; }
-    [Required]
+    
     [StringLength(20)]
+    [Required]
     public string UserName { get; set; }
     [Required]
     [StringLength(20)]

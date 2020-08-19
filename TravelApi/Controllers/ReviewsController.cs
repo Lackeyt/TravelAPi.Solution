@@ -7,6 +7,7 @@ using System;
 
 namespace TravelApi.Controllers
 {
+  [Produces("application/json")]
   [Route("api/[controller]")]
   [ApiController]
   public class ReviewsController : ControllerBase
@@ -62,20 +63,27 @@ namespace TravelApi.Controllers
 
     //PUT api/reviews/5 -- update review by id
     [HttpPut("{id}")]
-    public void Put(int id, [FromBody] Review review)
+    public void Put(int id, [FromBody] Review review, string userName)
     {
       review.ReviewId = id;
-      _db.Entry(review).State = EntityState.Modified;
-      _db.SaveChanges();
+      if(review.UserName == userName)
+      {
+        _db.Entry(review).State = EntityState.Modified;
+        _db.SaveChanges();
+      }
     }
 
-    //DELETE api/reviews/5 --delete review by id
+    //DELETE api/reviews/5 --delete review by id\
     [HttpDelete("{id}")]
-    public void Delete(int id)
+    public void Delete(int id, string userName)
     {
       var reviewToDelete = _db.Reviews.FirstOrDefault(entry=>entry.ReviewId == id);
-      _db.Reviews.Remove(reviewToDelete);
-      _db.SaveChanges();
+
+      if(reviewToDelete.UserName == userName)
+      {
+        _db.Reviews.Remove(reviewToDelete);
+        _db.SaveChanges();
+      }
     }
   }
 }
