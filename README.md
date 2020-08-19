@@ -78,7 +78,7 @@ This is an API project that offers full CRUD functionality. Users are able to ad
           - id (integer) *required
           - userName (string [max 20 characters], must match userName on record) *required
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Using the review list:
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Using the API:
 
   * Using a platform like Postman, specify the type of request (GET/POST/PUT/DELETE)
   * Enter the appropriate URL for your route above.
