@@ -118,7 +118,7 @@ This is an API project that offers full CRUD functionality. Users are able to ad
 ![ImportFilePath](./TravelApi/wwwroot/assets/images/readme/ImportFilePath.PNG)
 4. Under 'Default Schema to be Imported To', click the "new" button.
 ![SelectNew](./TravelApi/wwwroot/assets/images/readme/SelectNew.PNG)
-5. Name the schema 'tyson_lackey' and click "ok"
+5. Name the schema 'Travel_Api' and click "ok"
 ![NameSchema](./TravelApi/wwwroot/assets/images/readme/NameSchema.PNG)
 6. Click 'Start Import'
 ![StartImport](./TravelApi/wwwroot/assets/images/readme/StartImport.PNG)
